@@ -1,0 +1,12 @@
+{
+  "name": "mini-chat-with-fileupload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run dev --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
