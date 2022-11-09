@@ -1,23 +1,17 @@
-import express from 'express'
+import express, { json } from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import { graphqlHTTP } from 'express-graphql'
-import schema from './schema/schema.js'
+import { expressMiddleware } from '@apollo/server/express4'
+import server from './schema/index.js'
 
 dotenv.config()
 
 const app = express()
 
-app.use(cors())
+await server.start()
 
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema,
-    graphiql: true,
-  })
-)
+app.use('/graphql', cors(), json(), expressMiddleware(server))
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is listening on PORT ${process.env.PORT}`)
+  console.log(`listening to ${process.env.PORT}`)
 })

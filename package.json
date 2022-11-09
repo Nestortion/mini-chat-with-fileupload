@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "npm run dev --prefix server"
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client"
   },
   "keywords": [],
   "author": "",
