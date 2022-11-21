@@ -1,8 +1,10 @@
-import DB from '../config/db.js'
 import { DataTypes } from 'sequelize'
+import DB from '../config/db.js'
+import { Groups } from './Groups.js'
+import { Users } from './Users.js'
 
-const UserModel = DB.define(
-  'user',
+const UserGroups = DB.define(
+  'user_group',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -10,9 +12,8 @@ const UserModel = DB.define(
       primaryKey: true,
       allowNull: false,
     },
-    username: { type: DataTypes.STRING, allowNull: false, unique: true },
   },
   { timestamps: false }
 )
 
-export { UserModel }
+export { UserGroups }

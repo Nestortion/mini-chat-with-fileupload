@@ -5,6 +5,7 @@ import { Sequelize } from 'sequelize'
 const DB = new Sequelize('miniChat', 'root', `${process.env.DB_PASS}`, {
   host: 'localhost',
   dialect: 'mysql',
+  logging: false,
 })
 
 try {

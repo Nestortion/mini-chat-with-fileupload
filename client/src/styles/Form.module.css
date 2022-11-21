@@ -1,0 +1,11 @@
+.cringe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.messageConstructor {
+  display: flex;
+  flex-direction: column;
+}

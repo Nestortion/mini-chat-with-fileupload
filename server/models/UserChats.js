@@ -1,22 +1,22 @@
 import { DataTypes } from 'sequelize'
 import DB from '../config/db.js'
 
-const GroupModel = DB.define(
-  'group',
+const UserChats = DB.define(
+  'userchat',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
+      unique: true,
       autoIncrement: true,
     },
-    groupName: {
-      type: DataTypes.STRING,
+    message: {
+      type: DataTypes.TEXT,
       allowNull: false,
-      unique: true,
     },
   },
-  { timestamps: false }
+  { createdAt: true, updatedAt: false }
 )
 
-export { GroupModel }
+export { UserChats }
